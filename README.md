@@ -9,8 +9,15 @@ cd DALI/Examples/advanced
 bash startmas.sh
 ```
 -------------------------------------------------------------------------------------
+# Instructions
 
-To start the MAS:
+1. Install Redis at https://redis.io/
+2. Install SISCtus Prolog at https://sicstus.sics.se/
+3. Clone this repository: 
+```sh
+ git clone https://github.com/andrearafanelli/MAS_Py_FLOOD.git
+```
+4. Start the MAS:
 
   ```sh
   cd MAS
