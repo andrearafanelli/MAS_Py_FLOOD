@@ -1,0 +1,30 @@
+:- compile('./redis_client.pl').
+:- dynamic region/4, adjacent/2.
+
+water(Region) :-
+    region(Region, 3, _, _).
+
+
+flooded(Region, Label) :-
+    region(Region, Label, _, _),
+    (Label \= 7),
+    findall(Adjacent, (adjacent(Region, Adjacent), water(Adjacent)), AdjacentWaterRegions),
+    length(AdjacentWaterRegions, N),
+    N >= 2.
+
+has_flooded_regions :-
+    flooded(_, _).
+
+no_flooded_regions :-
+    \+ flooded(_, _).
+
+redisE(Msg) :> write('segnale: '), write(Msg), nl,
+               write('compiling...'), nl,
+               compile('/Users/andrearafanelli/Desktop/MAS-flooding-events/masFolder/DALI/mas/regions.pl'),
+               compile('/Users/andrearafanelli/Desktop/MAS-flooding-events/masFolder/DALI/mas/adjacent.pl'),
+               write('DONE'), nl.
+
+has_flooded_regionsI :> write('FLOOD!'), nl,
+                        retractall(region(_ , _, _, _)), nl,
+                        retractall(adjacent(_, _)), nl,
+                        messageA(alert, send_message(floodAlert, Me)).

@@ -1,0 +1,18 @@
+:- dynamic danger/2, alertWeather/0.
+
+floodAlertE :> once(reactRules).
+reactRules:- write('Received alert from Perceptor Agent!'), nl.
+
+danger_level(green, low).
+danger_level(yellow, moderate).
+danger_level(orange, high).
+danger_level(red, severe).
+
+danger(Color, Level) :- danger_level(Color, Level).
+
+
+redisE(Msg) :> write('segnale: '), write(Msg), nl,
+              assert(danger(Msg, _)).
+
+alertWeather :- danger(_ , _), retract(danger(_ , _)).
+alertWeatherI :> write('Received alert from Weather Station!').
