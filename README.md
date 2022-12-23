@@ -23,4 +23,17 @@ bash startmas.sh
   cd MAS
   bash startmas.sh 
   ```
-  
+5. Start the interaction between the MAS and the Neural Network: 
+
+- Send segmented mask to the MAS:
+
+```sh
+  cd src
+  python detection.py 
+  ```
+- Simulate weather station: 
+
+```sh
+  cd src
+  python weather_simulator.py 
+  ```
