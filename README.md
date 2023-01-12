@@ -30,10 +30,9 @@ If you train the model, your model will be saved in:
   ```sh
   python/models/ 
   ```
-  
-6. If you don't want to train the model you can directly refer to the model called **experiment.pt**.
+Please Note: if you don't want to train the model you can directly refer to the model called **experiment.pt**.
 
-7. Test your model with:
+6. Test your model with:
   ```sh
   cd python
   python experiment.py --mode test
