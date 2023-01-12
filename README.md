@@ -22,7 +22,7 @@ bash startmas.sh
 5. Train the Neural Network model (it take many time):
   ```sh
   cd python
-  python experiment.py 
+  python experiment.py --mode train
   ```
 You can directly pass to the **next point**, or you can personalize your experiment by changing the parameter of the NN (see the experiment.py file).
 
@@ -30,8 +30,18 @@ If you train the model, your model will be saved in:
   ```sh
   python/models/ 
   ```
+  
 6. If you don't want to train the model you can directly refer to the model called **experiment.pt**.
 
+7. Test your model with:
+  ```sh
+  cd python
+  python experiment.py --mode test
+  ```
+Your predictions will be saved in:
+```sh
+  python/predictions/ 
+  ```
 
 4. Start the MAS:
 
