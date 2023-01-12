@@ -17,20 +17,20 @@ bash startmas.sh
 ```sh
  git clone https://github.com/andrearafanelli/MAS_Py_FLOOD.git
 ```
-4. Download the dataset from:  https://drive.google.com/drive/folders/1leN9eWVQcvWDVYwNb2GCo5ML_wBEycWD and put the files into the folder 'dataset'
+4. Download the dataset from:  https://drive.google.com/drive/folders/1leN9eWVQcvWDVYwNb2GCo5ML_wBEycWD and put the files into the folder **dataset**.
 
 5. Train the Neural Network model (it take many time):
   ```sh
   cd python
   python experiment.py 
   ```
-You can directly pass to the next point, or you can personalize your experiment by changing the parameter of the NN (see the experiment.py file).
+You can directly pass to the **next point**, or you can personalize your experiment by changing the parameter of the NN (see the experiment.py file).
 
-If you train the model, your model will be saved in
+If you train the model, your model will be saved in:
   ```sh
   python/models/ 
   ```
-6. 
+6. If you don't want to train the model you can directly refer to the model called **experiment.pt**.
 
 
 4. Start the MAS:
