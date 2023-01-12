@@ -24,13 +24,13 @@ bash startmas.sh
   cd python
   python experiment.py --mode train
   ```
-You can directly pass to the **next point**, or you can personalize your experiment by changing the parameter of the NN (see the experiment.py file).
+You can personalize your experiment by changing the parameter of the NN (see the experiment.py file).
 
 If you train the model, your model will be saved in:
   ```sh
   python/models/ 
   ```
-Please Note: if you don't want to train the model you can directly refer to the model called **experiment.pt**.
+Please Note: if you don't want to train the model you can directlypass to the **next point** and refer to the model called **experiment.pt**.
 
 6. Test your model with:
   ```sh
