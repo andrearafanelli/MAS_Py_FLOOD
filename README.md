@@ -17,6 +17,12 @@ bash startmas.sh
 ```sh
  git clone https://github.com/andrearafanelli/MAS_Py_FLOOD.git
 ```
+4. Train the Neural Network model (it take many time):
+  ```sh
+   python experiment.py 
+   ```
+You can directly pass to the next point, or you can personalize your experiment by changing the parameter of the NN (see the run.py file)
+
 4. Start the MAS:
 
   ```sh
