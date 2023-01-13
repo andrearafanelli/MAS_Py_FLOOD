@@ -1,6 +1,6 @@
 
 '''
-Copyright 2022 Andrea Rafanelli.
+Copyright 2023 Andrea Rafanelli.
 Licensed under the Apache License, Version 2.0 (the "License"); 
 you may not use this file except in compliance with the License. 
 You may obtain a copy of the License at
@@ -123,7 +123,7 @@ class Tester:
                     try:
                         idx = index[i].split('/')[-1]
                         f_mask = self.reverse_transform_mask(preds[i])
-                        cv2.imwrite(os.path.join('predictions/{}'.format(idx)) , f_mask)
+                        cv2.imwrite(os.path.join(f"{os.getcwd()}/predictions/{idx}" , f_mask))
                     except:
                         continue
         self.metrics_calculator._update_metrics(self.metrics, epoch_samples, set_name)
