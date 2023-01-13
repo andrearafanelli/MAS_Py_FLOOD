@@ -17,7 +17,8 @@ bash startmas.sh
 ```sh
  git clone https://github.com/andrearafanelli/MAS_Py_FLOOD.git
 ```
-4. Download the dataset from:  https://drive.google.com/drive/folders/1leN9eWVQcvWDVYwNb2GCo5ML_wBEycWD and put the files into the folder **dataset**.
+4. Download the original dataset from:  https://drive.google.com/drive/folders/1leN9eWVQcvWDVYwNb2GCo5ML_wBEycWD or the modified version from: https://drive.google.com/file/d/1wz_-7DJdcnxspI0Yv-hAwmW0ImT2hYQP/view?usp=share_link
+Put the files into the folder **dataset**.
 
 5. Train the Neural Network model (it take many time):
   ```sh
