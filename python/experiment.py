@@ -9,6 +9,7 @@ from utils.dataset import GetDataset
 from utils.network import Trainer, Tester
 import segmentation_models_pytorch as sm
 import argparse
+import os
 
 class SegmentationExperiment:
     
@@ -57,10 +58,10 @@ class SegmentationExperiment:
                 self.best_model = copy.deepcopy(model.state_dict())
                 print(f'Best miou: {self.best_miou:.4f} Epoch: {epoch +1}')
                 print(">>>>> Saving model..")
-                torch.save(self.best_model, "../models/{}.pt".format(self.expName))
+                torch.save(self.best_model, f"{os.getcwd()}/models/{self.expName}.pt")
 
     def load_best_model(self):
-        self.model.load_state_dict(torch.load("../models/{}.pt".format(self.expName)))
+        self.model.load_state_dict(torch.load(f"{os.getcwd()}/models/{self.expName}.pt"))
         trainer = Tester(self.model, self.optimizer, self.device)
         train_epoch = trainer.testing(self.val_loader, 'Validation')
 
