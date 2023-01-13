@@ -29,9 +29,9 @@ bash startmas.sh
    You can personalize your experiment by changing the parameter of the NN (see the experiment.py file).
 
    If you train the model, your model will be saved in:
-      ```sh
-      python/models/ 
-      ```
+   ```sh
+   python/models/ 
+   ```
    Please Note: if you don't want to train the model you can directlypass to the **next point** and refer to the model called **experiment.pt**.
 
 6. Test your model with:
@@ -41,7 +41,7 @@ bash startmas.sh
    ```
    Your predictions will be saved in:
    ```sh
-     python/predictions/ 
+   python/predictions/ 
    ```
 
 7. Start the MAS:
@@ -54,17 +54,17 @@ bash startmas.sh
 8. Use Redis to create a connection between the NN and the MAS (for more information check https://redis.io/).
    Turn on Redis:
    ```sh
-     redis-cli
+   redis-cli
    ```
 9. Start the interaction between the MAS and the Neural Network: 
 
    **Send segmented mask to the MAS**:
 
-     ```sh
-       cd src
-       python detection.py 
-     ```
-     In another terminal:
+    ```sh
+    cd src
+    python detection.py 
+    ```
+    In another terminal:
 
      ```sh
      cd MAS/DALI/mas/py
@@ -73,7 +73,7 @@ bash startmas.sh
 
    **Simulate weather station**: 
 
-   ```sh
+     ```sh
      cd src
      python weather_simulator.py 
      ```
