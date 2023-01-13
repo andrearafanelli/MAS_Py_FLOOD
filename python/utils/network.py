@@ -120,12 +120,12 @@ class Tester:
                 epoch_samples += inputs.size(0)
                 
                 for i in range(self.batch):   
-                    try:
+                    if i < len(index):
                         idx = index[i].split('/')[-1]
                         f_mask = self.reverse_transform_mask(preds[i])
-                        cv2.imwrite(os.path.join(f"{os.getcwd()}/predictions/{idx}" , f_mask))
-                    except:
-                        continue
+                        cv2.imwrite(os.path.join(f"{os.getcwd()}/predictions/{idx}"),f_mask)
+                    else:
+                        pass
         self.metrics_calculator._update_metrics(self.metrics, epoch_samples, set_name)
         
         return self.metrics
