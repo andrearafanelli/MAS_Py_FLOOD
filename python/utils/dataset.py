@@ -70,9 +70,9 @@ class GetDataset(distutils.cmd.Command):
     """
 
     def __init__(self, labels):
-        self.train_path = '../dataset/train/img/'
-        self.test_path = '../dataset/test/img/'
-        self.val_path = '../dataset/val/img/'
+        self.train_path = f"{os.getcwd()}/dataset/train/img/"
+        self.test_path = f"{os.getcwd()}/dataset/test/img/"
+        self.val_path = f"{os.getcwd()}/dataset/val/img/"
         self.labels = labels
         self.batch_size = 8
 
