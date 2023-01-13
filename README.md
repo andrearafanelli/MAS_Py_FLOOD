@@ -43,23 +43,45 @@ Your predictions will be saved in:
   python/predictions/ 
   ```
 
-4. Start the MAS:
+7. Start the MAS:
 
   ```sh
   cd MAS
   bash startmas.sh 
   ```
-5. Start the interaction between the MAS and the Neural Network: 
+  
+8. Use Redis to create a connection between the NN and the MAS (for more information check https://redis.io/).
+   Turn on Redis:
+```sh
+  redis-cli
+   ```
+9. Start the interaction between the MAS and the Neural Network: 
 
-- Send segmented mask to the MAS:
+**Send segmented mask to the MAS**:
 
 ```sh
   cd src
   python detection.py 
   ```
-- Simulate weather station: 
+  In another terminal:
+  
+  ```sh
+  cd MAS/DALI/mas/py
+  python redis2MAS.py 
+  ```
+  
+**Simulate weather station**: 
 
 ```sh
   cd src
   python weather_simulator.py 
   ```
+  
+  In another terminal:
+  
+  ```sh
+  cd MAS/DALI/mas/py
+  python redis2MAS.py 
+  ```
+
+ 
