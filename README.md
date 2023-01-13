@@ -57,31 +57,31 @@ Your predictions will be saved in:
    ```
 9. Start the interaction between the MAS and the Neural Network: 
 
-**Send segmented mask to the MAS**:
+   **Send segmented mask to the MAS**:
 
-```sh
-  cd src
-  python detection.py 
-  ```
-  In another terminal:
-  
-  ```sh
-  cd MAS/DALI/mas/py
-  python redis2MAS.py 
-  ```
-  
-**Simulate weather station**: 
+   ```sh
+     cd src
+     python detection.py 
+     ```
+     In another terminal:
 
-```sh
-  cd src
-  python weather_simulator.py 
-  ```
-  
-  In another terminal:
-  
-  ```sh
-  cd MAS/DALI/mas/py
-  python redis2MAS.py 
-  ```
+     ```sh
+     cd MAS/DALI/mas/py
+     python redis2MAS.py 
+     ```
+
+   **Simulate weather station**: 
+
+   ```sh
+     cd src
+     python weather_simulator.py 
+     ```
+
+     In another terminal:
+
+     ```sh
+     cd MAS/DALI/mas/py
+     python redis2MAS.py 
+     ```
 
  
