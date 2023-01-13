@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import pandas as pd
-from src.utils.simulator import get_color
+from utils.simulator import get_color
 import redis
 from time import sleep
 import base64
