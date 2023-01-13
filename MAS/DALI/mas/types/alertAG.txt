@@ -1,7 +1,7 @@
 :- dynamic danger/2, alertWeather/0.
 
-floodAlertE :> once(reactRules).
-reactRules:- write('Received alert from Perceptor Agent!'), nl.
+floodAlertE :> once(reactYes).
+reactYes:- write('Received alert from Perceptor Agent!'), nl.
 
 danger_level(green, low).
 danger_level(yellow, moderate).
