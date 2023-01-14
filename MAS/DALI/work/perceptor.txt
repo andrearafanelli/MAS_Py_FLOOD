@@ -18,8 +18,8 @@ has_flooded_regions :-
 
 redisE(Msg) :> write('segnale: '), write(Msg), nl,
                write('compiling...'), nl,
-               compile('/Users/andrearafanelli/Desktop/MAS_Py_FlOOD/MAS/DALI/mas/regions.pl'),
-               compile('/Users/andrearafanelli/Desktop/MAS_Py_FlOOD/MAS/DALI/mas/adjacent.pl'),
+               compile('/Users/andrearafanelli/Desktop/prova/MAS/DALI/mas/regions.pl'),
+               compile('/Users/andrearafanelli/Desktop/prova/MAS/DALI/mas/adjacent.pl'),
                write('DONE'), nl.
 
 has_flooded_regionsI :> write('Flood!'), nl,

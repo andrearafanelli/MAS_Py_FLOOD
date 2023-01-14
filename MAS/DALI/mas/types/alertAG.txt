@@ -1,18 +1,32 @@
-:- dynamic danger/2, alertWeather/0.
+:- dynamic new_color/1, floodImg/0, floodW/0.
 
 floodAlertE :> once(reactYes).
-reactYes:- write('Received alert from Perceptor Agent!'), nl.
+reactYes:- assert(floodImg), write('PreAlert from Perceptor agent: critical weather condition!'), nl.
+
 
 danger_level(green, low).
 danger_level(yellow, moderate).
 danger_level(orange, high).
 danger_level(red, severe).
 
-danger(Color, Level) :- danger_level(Color, Level).
+danger(Level) :- new_color(Color), danger_level(Color, Level).
 
 
 redisE(Msg) :> write('segnale: '), write(Msg), nl,
-              assert(danger(Msg, _)).
+              assert(new_color(Msg)).
 
-alertWeather :- danger(_ , _), retract(danger(_ , _)).
-alertWeatherI :> write('Received alert from Weather Station!').
+alertIssue :- danger(Level),
+              (Level \= low),
+              (Level \= moderate).
+
+alertW :- alertIssue, retract(new_color(_)).
+alertWI :> assert(floodW),
+           write('PreAlert from Weather agent: critical weather condition!'), nl.
+
+
+noIssue :- \+alertIssue, retract(new_color(_)).
+noIssueI :> write('Not critical weather condition!'), nl.
+
+criticalIssue :- floodW, floodImg,
+                 retract(floodW), retract(floodImg).
+criticalIssueI :> write('Alert authorities, both the agents communicated critical weather conditions!'), nl.

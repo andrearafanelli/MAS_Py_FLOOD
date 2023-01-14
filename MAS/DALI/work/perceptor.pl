@@ -9,7 +9,7 @@ flooded(var_Region,var_Label):-region(var_Region,var_Label,var__,var__),var_Labe
 
 has_flooded_regions:-flooded(var__,var__).
 
-eve(redis(var_Msg)):-write('segnale: '),write(var_Msg),nl,write('compiling...'),nl,compile('/Users/andrearafanelli/Desktop/MAS_Py_FlOOD/MAS/DALI/mas/regions.pl'),compile('/Users/andrearafanelli/Desktop/MAS_Py_FlOOD/MAS/DALI/mas/adjacent.pl'),write('DONE'),nl.
+eve(redis(var_Msg)):-write('segnale: '),write(var_Msg),nl,write('compiling...'),nl,compile('/Users/andrearafanelli/Desktop/prova/MAS/DALI/mas/regions.pl'),compile('/Users/andrearafanelli/Desktop/prova/MAS/DALI/mas/adjacent.pl'),write('DONE'),nl.
 
 evi(has_flooded_regions):-write('Flood!'),nl,retractall(region(var__,var__,var__,var__)),nl,retractall(adjacent(var__,var__)),nl,a(message(alert,send_message(floodAlert,var_Me))).
 
@@ -103,11 +103,11 @@ call_inform(var_X,var_Ag,var_T):-asse_cosa(past_event(inform(var_X,var_Ag),var_T
 
 call_refuse(var_X,var_Ag,var_T):-clause(agent(var_A),var__),asse_cosa(past_event(var_X,var_T)),statistics(walltime,[var_Tp,var__]),retractall(past(var_X,var__,var_Ag)),assert(past(var_X,var_Tp,var_Ag)),a(message(var_Ag,reply(received(var_X),var_A))).
 
-call_cfp(var_A,var_C,var_Ag):-clause(agent(var_AgI),var__),clause(ext_agent(var_Ag,_326549,var_Ontology,_326553),_326543),asserisci_ontologia(var_Ag,var_Ontology,var_A),once(call_meta_execute_cfp(var_A,var_C,var_Ag,_326587)),a(message(var_Ag,propose(var_A,[_326587],var_AgI))),retractall(ext_agent(var_Ag,_326625,var_Ontology,_326629)).
+call_cfp(var_A,var_C,var_Ag):-clause(agent(var_AgI),var__),clause(ext_agent(var_Ag,_326157,var_Ontology,_326161),_326151),asserisci_ontologia(var_Ag,var_Ontology,var_A),once(call_meta_execute_cfp(var_A,var_C,var_Ag,_326195)),a(message(var_Ag,propose(var_A,[_326195],var_AgI))),retractall(ext_agent(var_Ag,_326233,var_Ontology,_326237)).
 
-call_propose(var_A,var_C,var_Ag):-clause(agent(var_AgI),var__),clause(ext_agent(var_Ag,_326423,var_Ontology,_326427),_326417),asserisci_ontologia(var_Ag,var_Ontology,var_A),once(call_meta_execute_propose(var_A,var_C,var_Ag)),a(message(var_Ag,accept_proposal(var_A,[],var_AgI))),retractall(ext_agent(var_Ag,_326493,var_Ontology,_326497)).
+call_propose(var_A,var_C,var_Ag):-clause(agent(var_AgI),var__),clause(ext_agent(var_Ag,_326031,var_Ontology,_326035),_326025),asserisci_ontologia(var_Ag,var_Ontology,var_A),once(call_meta_execute_propose(var_A,var_C,var_Ag)),a(message(var_Ag,accept_proposal(var_A,[],var_AgI))),retractall(ext_agent(var_Ag,_326101,var_Ontology,_326105)).
 
-call_propose(var_A,var_C,var_Ag):-clause(agent(var_AgI),var__),clause(ext_agent(var_Ag,_326311,var_Ontology,_326315),_326305),not(call_meta_execute_propose(var_A,var_C,var_Ag)),a(message(var_Ag,reject_proposal(var_A,[],var_AgI))),retractall(ext_agent(var_Ag,_326367,var_Ontology,_326371)).
+call_propose(var_A,var_C,var_Ag):-clause(agent(var_AgI),var__),clause(ext_agent(var_Ag,_325919,var_Ontology,_325923),_325913),not(call_meta_execute_propose(var_A,var_C,var_Ag)),a(message(var_Ag,reject_proposal(var_A,[],var_AgI))),retractall(ext_agent(var_Ag,_325975,var_Ontology,_325979)).
 
 call_accept_proposal(var_A,var_Mp,var_Ag,var_T):-asse_cosa(past_event(accepted_proposal(var_A,var_Mp,var_Ag),var_T)),statistics(walltime,[var_Tp,var__]),retractall(past(accepted_proposal(var_A,var_Mp,var_Ag),var__,var_Ag)),assert(past(accepted_proposal(var_A,var_Mp,var_Ag),var_Tp,var_Ag)).
 
@@ -115,7 +115,7 @@ call_reject_proposal(var_A,var_Mp,var_Ag,var_T):-asse_cosa(past_event(rejected_p
 
 call_failure(var_A,var_M,var_Ag,var_T):-asse_cosa(past_event(failed_action(var_A,var_M,var_Ag),var_T)),statistics(walltime,[var_Tp,var__]),retractall(past(failed_action(var_A,var_M,var_Ag),var__,var_Ag)),assert(past(failed_action(var_A,var_M,var_Ag),var_Tp,var_Ag)).
 
-call_cancel(var_A,var_Ag):-if(clause(high_action(var_A,var_Te,var_Ag),_325875),retractall(high_action(var_A,var_Te,var_Ag)),true),if(clause(normal_action(var_A,var_Te,var_Ag),_325909),retractall(normal_action(var_A,var_Te,var_Ag)),true).
+call_cancel(var_A,var_Ag):-if(clause(high_action(var_A,var_Te,var_Ag),_325483),retractall(high_action(var_A,var_Te,var_Ag)),true),if(clause(normal_action(var_A,var_Te,var_Ag),_325517),retractall(normal_action(var_A,var_Te,var_Ag)),true).
 
 external_refused_action_propose(var_A,var_Ag):-clause(not_executable_action_propose(var_A,var_Ag),var__).
 
@@ -123,17 +123,17 @@ evi(external_refused_action_propose(var_A,var_Ag)):-clause(agent(var_Ai),var__),
 
 refused_message(var_AgM,var_Con):-clause(eliminated_message(var_AgM,var__,var__,var_Con,var__),var__).
 
-refused_message(var_To,var_M):-clause(eliminated_message(var_M,var_To,motivation(conditions_not_verified)),_325691).
+refused_message(var_To,var_M):-clause(eliminated_message(var_M,var_To,motivation(conditions_not_verified)),_325299).
 
 evi(refused_message(var_AgM,var_Con)):-clause(agent(var_Ai),var__),a(message(var_AgM,inform(var_Con,motivation(refused_message),var_Ai))),retractall(eliminated_message(var_AgM,var__,var__,var_Con,var__)),retractall(eliminated_message(var_Con,var_AgM,motivation(conditions_not_verified))).
 
-send_jasper_return_message(var_X,var_S,var_T,var_S0):-clause(agent(var_Ag),_325539),a(message(var_S,send_message(sent_rmi(var_X,var_T,var_S0),var_Ag))).
+send_jasper_return_message(var_X,var_S,var_T,var_S0):-clause(agent(var_Ag),_325147),a(message(var_S,send_message(sent_rmi(var_X,var_T,var_S0),var_Ag))).
 
-gest_learn(var_H):-clause(past(learn(var_H),var_T,var_U),_325487),learn_if(var_H,var_T,var_U).
+gest_learn(var_H):-clause(past(learn(var_H),var_T,var_U),_325095),learn_if(var_H,var_T,var_U).
 
-evi(gest_learn(var_H)):-retractall(past(learn(var_H),_325363,_325365)),clause(agente(_325385,_325387,_325389,var_S),_325381),name(var_S,var_N),append(var_L,[46,112,108],var_N),name(var_F,var_L),manage_lg(var_H,var_F),a(learned(var_H)).
+evi(gest_learn(var_H)):-retractall(past(learn(var_H),_324971,_324973)),clause(agente(_324993,_324995,_324997,var_S),_324989),name(var_S,var_N),append(var_L,[46,112,108],var_N),name(var_F,var_L),manage_lg(var_H,var_F),a(learned(var_H)).
 
-cllearn:-clause(agente(_325157,_325159,_325161,var_S),_325153),name(var_S,var_N),append(var_L,[46,112,108],var_N),append(var_L,[46,116,120,116],var_To),name(var_FI,var_To),open(var_FI,read,_325257,[]),repeat,read(_325257,var_T),arg(1,var_T,var_H),write(var_H),nl,var_T==end_of_file,!,close(_325257).
+cllearn:-clause(agente(_324765,_324767,_324769,var_S),_324761),name(var_S,var_N),append(var_L,[46,112,108],var_N),append(var_L,[46,116,120,116],var_To),name(var_FI,var_To),open(var_FI,read,_324865,[]),repeat,read(_324865,var_T),arg(1,var_T,var_H),write(var_H),nl,var_T==end_of_file,!,close(_324865).
 
 send_msg_learn(var_T,var_A,var_Ag):-a(message(var_Ag,confirm(learn(var_T),var_A))).
 
