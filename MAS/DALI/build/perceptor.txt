@@ -25,4 +25,4 @@ redisE(Msg) :> write('segnale: '), write(Msg), nl,
 has_flooded_regionsI :> write('Flood!'), nl,
                         retractall(region(_ , _, _, _)), nl,
                         retractall(adjacent(_, _)), nl,
-                        messageA(alert, send_message(floodAlert, Me)).
+                        messageA(alert, send_message(flood_alert, Me)).
