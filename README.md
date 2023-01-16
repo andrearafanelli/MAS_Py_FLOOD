@@ -21,7 +21,7 @@ bash startmas.sh
 
    Put the files into the folder **dataset**.
 
-5. Train the Neural Network model (it take many time):
+5. Train the Neural Network model (can be time-consuming):
    ```sh
    cd python
    python experiment.py --mode train
