@@ -13,7 +13,7 @@ flooded(Region, Label) :-
     N >= 2.
 
 has_flooded_regions :-
-    flooded(_ , _).
+     flooded(_ , _).
 
 
 redisE(Msg) :> write('segnale: '), write(Msg), nl,

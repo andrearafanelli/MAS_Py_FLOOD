@@ -1,7 +1,7 @@
 :- dynamic new_color/1, pre_alert_weather/0, flood_issue/0.
 
 flood_alertE :> assert(flood_issue),
-               write('Pre-alert from Perceptor agent: critical weather condition!'), nl.
+               write('Pre-alert from Perceptor agent: critical flooding condition!'), nl.
 
 
 danger_level(green, low).
