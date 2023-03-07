@@ -1,4 +1,4 @@
-# The Multi-Agent System
+# Multi-Agent System for Flooding Disaster Management
 
 The Multi-Agent System (MAS) has been developed using DALI, running on top of SICStus Prolog. 
 
