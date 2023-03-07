@@ -52,6 +52,7 @@ bash startmas.sh
    ```
   
 8. Use Redis to create a connection between the NN and the MAS (for more information check https://redis.io/).
+
    Turn on Redis:
    ```sh
    redis-cli
