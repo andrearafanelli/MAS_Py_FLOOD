@@ -1,4 +1,12 @@
 <h1 align="center"> Neural-logic Multi-agent System for flood event detection </h1>
+<div>
+<img src=https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white>
+<img src=https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=for-the-badge&logo=PyTorch>
+<img src=https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white>
+</div>
+
+
+
 <h2 align="center">Multi-Agent System for Flooding Disaster Management</h2>
 
 <img src= ./ASSETS/Image.jpeg class="center" height=500px width=700 px>.
