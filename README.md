@@ -31,6 +31,9 @@ Bibtex:
 	    url = {https://doi.org/10.3233/IA-230004},
 }	
 ```
+
+-------------------------------------------------------------------------------------
+
 ## Info
 
 The Multi-Agent System (MAS) has been developed using DALI, running on top of SICStus Prolog. 
@@ -41,7 +44,7 @@ git clone https://github.com/AAAI-DISIM-UnivAQ/DALI.git
 cd DALI/Examples/advanced
 bash startmas.sh
 ```
--------------------------------------------------------------------------------------
+
 ## Instructions
 
 1. Install Redis at https://redis.io/
