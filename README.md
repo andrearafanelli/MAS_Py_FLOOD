@@ -1,4 +1,28 @@
-# Multi-Agent System for Flooding Disaster Management
+<h1 align="center"> Neural-logic Multi-agent System for flood event detection </h1>
+<h2 align="center">Multi-Agent System for Flooding Disaster Management</h2>
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+### Reference paper
+
+> Andrea Rafanelli, Stefania Costantini, Giovanni De Gasperis. "[Neural-logic Multi-agent System for Flood Event Detection]", in: Intelligenza Artificiale, 2023.
+
+Bibtex: 
+```bibtex
+@article{10.3233/IA-230004,
+	    author = {Rafanelli, Andrea and Costantini, Stefania and De Gasperis, Giovanni},
+	    title = "{Neural-logic Multi-agent System for Flood Event Detection}",
+	    booktitle = {Intelligenza Artificiale},
+	    publisher = {IOS Press},
+	    year = {2023},
+	    vol = {17},
+	    pages = {19-35}
+	    abstract ={This paper shows the capabilities offered by an integrated neural-logic multi-agent system (MAS). Our case study encompasses logical agents and a deep learning (DL) component, to devise a system specialised in monitoring flood events for civil protection purposes. More precisely, we describe a prototypical framework consisting of a set of intelligent agents, which perform various tasks and communicate with each other to efficiently generate alerts during flood crisis events. Alerts are only delivered when at least two separates sources agree on an event on the same zone, i.e. aerial images and severe weather reports. Images are segmented by a neural network trained over eight classes of topographical entities. The resulting mask is analysed by a Logic Image Descriptor (LID) which then submit the perception to a logical agent.,}
+	    issn = {2211-0097},
+	    doi = {10.3233/IA-230004},
+	    url = {https://doi.org/10.3233/IA-230004},
+}	
+```
+## Info
 
 The Multi-Agent System (MAS) has been developed using DALI, running on top of SICStus Prolog. 
 
@@ -9,7 +33,7 @@ cd DALI/Examples/advanced
 bash startmas.sh
 ```
 -------------------------------------------------------------------------------------
-# Instructions
+## Instructions
 
 1. Install Redis at https://redis.io/
 2. Install SISCtus Prolog at https://sicstus.sics.se/
