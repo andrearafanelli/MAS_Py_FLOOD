@@ -1,6 +1,6 @@
 <h1 align="center"> Neural-logic Multi-agent System for flood event detection </h1>
 <h2 align="center">Multi-Agent System for Flooding Disaster Management</h2>
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://img.shields.io/badge/License-Apache_2.0-blue.svg)
+
 
 
 ### Reference paper
