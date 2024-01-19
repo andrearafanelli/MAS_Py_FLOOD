@@ -9,7 +9,7 @@
 
 <h2 align="center">Multi-Agent System for Flooding Disaster Management</h2>
 
-<img src= ./ASSETS/Image.jpeg class="center" height=500px width=700 px>.
+<img src= ./ASSETS/image-mas.png class="center" height=500px width=500 px>.
 
 ### Reference paper
 
